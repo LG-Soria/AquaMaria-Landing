@@ -19,7 +19,7 @@ export const EquipmentSection = () => (
         {[
           { title: "Dispenser de Pie", cat: "Oficinas y Empresas", img: "https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&q=80&w=400" },
           { title: "Dispenser de Mesada", cat: "Compacto Profesional", img: "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=400" },
-          { title: "Filtros de Mesada", cat: "Hogares y Cocinas", img: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&q=80&w=400" }
+          { title: "Filtros de Mesada", cat: "Hogares y Cocinas", img: "https://images.unsplash.com/photo-1669211659110-3f3db4119b65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
         ].map((item, i) => (
           <div key={i} className="group cursor-pointer">
             <div className="aspect-[3/4] rounded-[2.5rem] bg-slate-100 overflow-hidden mb-6 relative shadow-lg">

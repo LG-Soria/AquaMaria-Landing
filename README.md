@@ -1,20 +1,26 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
-
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1zenBPp4pYUBcELbh4Hl1R5wPCB7kvZUw
-
-## Run Locally
-
-**Prerequisites:**  Node.js
+**AquaMaria - Purificacion Premium**
+- Landing page en React, Vite y TypeScript para alquilar dispensers y filtros de agua de red sin bidon ni logistica de botellones.
+- Diseno mobile-first con utilidades Tailwind cargadas por CDN y tipografia Plus Jakarta Sans.
+- Arquitectura de componentes (atoms, molecules, organisms) que separa UI basica de secciones completas: Hero, ProblemSection, SolutionSection, HowItWorks, RentalIncludes, BenefitsSection, EquipmentSection, FAQSection, FinalCTA, Navbar y Footer.
+- CTA principal y boton flotante apuntan a WhatsApp para contacto inmediato.
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+**Requisitos**
+- Node 18+ y npm.
+
+**Configuracion rapida**
+- Instalar dependencias: `npm install`
+- Desarrollo: `npm run dev` (Vite en puerto 3000, host 0.0.0.0)
+- Build de produccion: `npm run build`
+- Vista previa del build: `npm run preview`
+
+**Estructura breve**
+- `App.tsx`: arma la landing y el boton flotante de WhatsApp.
+- `components/`: atoms, molecules y organisms.
+- `index.html`: carga Tailwind CDN, fuente Plus Jakarta Sans e import map para modulos.
+- `vite.config.ts`: alias `@` hacia la raiz y config de servidor.
+- `types.ts`: tipos compartidos para productos, planes y asesor.
+
+**Notas**
+- Numero de WhatsApp actual: `5491165532832` (editar en `App.tsx` y `components/organisms/FinalCTA.tsx` si cambia).
+- Imagenes y video se sirven desde URLs publicas (Unsplash/Mixkit); cambia las rutas si necesitas assets propios.

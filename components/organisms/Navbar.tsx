@@ -21,6 +21,26 @@ export const Navbar = () => {
     { name: 'FAQ', href: '#faq' },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    
+    if (elem) {
+      // Calculamos la posición del elemento menos el alto del header aproximado (80px)
+      const offset = 80;
+      const elementPosition = elem.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    
+    setIsOpen(false);
+  };
+
   return (
     <nav className={`fixed w-full z-[60] transition-all duration-500 ${scrolled ? 'glass-light py-2 md:py-3 shadow-sm border-b border-slate-200/50' : 'bg-transparent py-4 md:py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -32,6 +52,7 @@ export const Navbar = () => {
               <a 
                 key={item.name} 
                 href={item.href} 
+                onClick={(e) => handleNavClick(e, item.href)}
                 className={`text-sm font-semibold transition-colors duration-300 ${scrolled ? 'text-slate-600 hover:text-cyan-600' : 'text-slate-200 hover:text-white'}`}
               >
                 {item.name}
@@ -55,8 +76,8 @@ export const Navbar = () => {
             <a 
               key={item.name} 
               href={item.href} 
+              onClick={(e) => handleNavClick(e, item.href)}
               className="font-bold text-xl text-slate-900 border-b border-slate-100 pb-3 hover:text-cyan-600 transition-colors" 
-              onClick={() => setIsOpen(false)}
             >
               {item.name}
             </a>

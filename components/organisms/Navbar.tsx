@@ -16,8 +16,8 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Servicio', href: '#servicio' },
-    { name: 'Equipos', href: '#equipos' },
     { name: 'Beneficios', href: '#beneficios' },
+    { name: 'Equipos', href: '#equipos' },
     { name: 'FAQ', href: '#faq' },
   ];
 
@@ -25,7 +25,7 @@ export const Navbar = () => {
     e.preventDefault();
     const targetId = href.replace('#', '');
     const elem = document.getElementById(targetId);
-    
+
     if (elem) {
       // Calculamos la posición del elemento menos el alto del header aproximado (80px)
       const offset = 80;
@@ -37,7 +37,7 @@ export const Navbar = () => {
         behavior: 'smooth'
       });
     }
-    
+
     setIsOpen(false);
   };
 
@@ -46,12 +46,12 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Logo isScrolled={scrolled || isOpen} />
-          
+
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((item) => (
-              <a 
-                key={item.name} 
-                href={item.href} 
+              <a
+                key={item.name}
+                href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
                 className={`text-sm font-semibold transition-colors duration-300 ${scrolled ? 'text-slate-600 hover:text-cyan-600' : 'text-slate-200 hover:text-white'}`}
               >
@@ -73,18 +73,18 @@ export const Navbar = () => {
       <div className={`md:hidden fixed inset-x-0 top-0 pt-20 pb-10 px-6 bg-white shadow-2xl transition-all duration-300 ease-in-out z-[-1] border-b border-slate-100 ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
         <div className="flex flex-col gap-6">
           {navLinks.map((item) => (
-            <a 
-              key={item.name} 
-              href={item.href} 
+            <a
+              key={item.name}
+              href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="font-bold text-xl text-slate-900 border-b border-slate-100 pb-3 hover:text-cyan-600 transition-colors" 
+              className="font-bold text-xl text-slate-900 border-b border-slate-100 pb-3 hover:text-cyan-600 transition-colors"
             >
               {item.name}
             </a>
           ))}
-          <Button 
-            variant="dark" 
-            className="w-full py-5 text-lg flex gap-3" 
+          <Button
+            variant="dark"
+            className="w-full py-5 text-lg flex gap-3"
             onClick={() => {
               setIsOpen(false);
               window.open('https://wa.me/5491165532832', '_blank');

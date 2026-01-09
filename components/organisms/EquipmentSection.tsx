@@ -21,7 +21,7 @@ export const EquipmentSection = () => (
           { title: "Dispenser de Mesada", cat: "Compacto Profesional", img: "/images/dispenser-mesada-cocina.jpg", pos: "object-[72%_20%]" },
           { title: "Filtros de Mesada", cat: "Hogares y Cocinas", img: "/images/purificador-humma-cocina.jpg", pos: "object-center" }
         ].map((item, i) => (
-          <div key={i} className="group cursor-pointer">
+          <div key={i} className="group cursor-default">
             <div className="aspect-[3/4] rounded-[2.5rem] bg-slate-100 overflow-hidden mb-6 relative shadow-lg">
               <img src={item.img} className={`w-full h-full object-cover ${item.pos} group-hover:scale-110 transition-transform duration-700`} alt={item.title} />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>

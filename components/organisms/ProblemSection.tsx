@@ -30,11 +30,11 @@ export const ProblemSection = () => (
         </div>
         <div className="relative">
           <div className="aspect-square rounded-[3rem] bg-slate-100 overflow-hidden shadow-2xl">
-             <img 
-               src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=800" 
-               className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700" 
-               alt="Bidones de agua acumulados" 
-             />
+            <img
+              src="/images/problema-bidones-acumulados.jpg"
+              className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700"
+              alt="Bidones de agua acumulados"
+            />
           </div>
           <div className="absolute -bottom-6 -right-6 glass-light p-8 rounded-3xl shadow-xl border border-slate-200 max-w-xs">
             <p className="text-slate-900 font-bold italic">"Todo esto genera una imagen que no representa a una empresa organizada."</p>

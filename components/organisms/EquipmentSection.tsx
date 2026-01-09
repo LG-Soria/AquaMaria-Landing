@@ -14,16 +14,16 @@ export const EquipmentSection = () => (
           Te ayudamos a elegir la opción más adecuada según el uso, el espacio y la cantidad de personas.
         </p>
       </div>
-      
+
       <div className="grid md:grid-cols-3 gap-10">
         {[
-          { title: "Dispenser de Pie", cat: "Oficinas y Empresas", img: "https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&q=80&w=400" },
-          { title: "Dispenser de Mesada", cat: "Compacto Profesional", img: "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=400" },
-          { title: "Filtros de Mesada", cat: "Hogares y Cocinas", img: "https://images.unsplash.com/photo-1669211659110-3f3db4119b65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
+          { title: "Dispenser de Pie", cat: "Oficinas y Empresas", img: "/images/dispenser-oficina-premium.jpg", pos: "object-right" },
+          { title: "Dispenser de Mesada", cat: "Compacto Profesional", img: "/images/dispenser-mesada-cocina.jpg", pos: "object-[72%_20%]" },
+          { title: "Filtros de Mesada", cat: "Hogares y Cocinas", img: "/images/purificador-humma-cocina.jpg", pos: "object-center" }
         ].map((item, i) => (
           <div key={i} className="group cursor-pointer">
             <div className="aspect-[3/4] rounded-[2.5rem] bg-slate-100 overflow-hidden mb-6 relative shadow-lg">
-              <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
+              <img src={item.img} className={`w-full h-full object-cover ${item.pos} group-hover:scale-110 transition-transform duration-700`} alt={item.title} />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
               <div className="absolute bottom-8 left-8">
                 <p className="text-cyan-400 font-bold text-xs uppercase tracking-widest mb-2">{item.cat}</p>

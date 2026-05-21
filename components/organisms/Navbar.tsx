@@ -1,12 +1,14 @@
-
-import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
+﻿import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '../atoms/Button';
 import { Logo } from '../atoms/Logo';
+import { WhatsAppIcon } from '../atoms/WhatsAppIcon';
+import { WHATSAPP_PROPOSAL_URL } from '../../contact';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const showLogoTag = !scrolled && !isOpen;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -16,7 +18,7 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Servicio', href: '#servicio' },
-    { name: 'Beneficios', href: '#beneficios' },
+    { name: 'Cómo funciona', href: '#como-funciona' },
     { name: 'Equipos', href: '#equipos' },
     { name: 'FAQ', href: '#faq' },
   ];
@@ -27,7 +29,6 @@ export const Navbar = () => {
     const elem = document.getElementById(targetId);
 
     if (elem) {
-      // Calculamos la posición del elemento menos el alto del header aproximado (80px)
       const offset = 80;
       const elementPosition = elem.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -42,35 +43,64 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-[60] transition-all duration-500 ${scrolled ? 'glass-light py-2 md:py-3 shadow-sm border-b border-slate-200/50' : 'bg-transparent py-4 md:py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <Logo isScrolled={scrolled || isOpen} />
+    <nav className="fixed w-full z-[60] bg-transparent py-0">
+      <div
+        className={`mx-auto transition-[padding,max-width] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          showLogoTag
+            ? 'max-w-none px-4 sm:px-6 lg:max-w-7xl lg:px-8'
+            : 'max-w-none px-0 lg:max-w-7xl lg:px-8'
+        }`}
+      >
+        <div
+          className={`flex items-center justify-between overflow-hidden bg-white/95 backdrop-blur-md ring-1 ring-white/80 will-change-[width,border-radius,box-shadow,padding] transition-[width,border-radius,box-shadow,padding,border-color] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            showLogoTag
+              ? 'w-full rounded-b-2xl px-4 py-2 shadow-2xl shadow-cyan-950/25 sm:px-5 md:px-6 lg:w-[136px] lg:rounded-b-[1.75rem] lg:px-1 lg:pt-2 lg:pb-2'
+              : 'w-full rounded-b-none border-b border-slate-200/50 px-4 py-2 shadow-sm md:px-6 md:py-3 lg:rounded-b-2xl'
+          }`}
+        >
+          <div className="shrink-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+            <Logo
+              isScrolled={scrolled || isOpen}
+              imageClassName={
+                showLogoTag
+                  ? 'h-14 w-12 p-2 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-16 md:w-44 md:p-0 lg:h-10 lg:w-32'
+                  : 'h-14 w-12 p-2 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-16 md:w-44 md:p-0 lg:h-16 lg:w-48'
+              }
+            />
+          </div>
 
-          <div className="hidden md:flex items-center gap-10">
+          <div
+            className={`hidden lg:flex items-center gap-10 transition-[opacity,transform] duration-500 ${
+              showLogoTag ? 'pointer-events-none translate-x-6 opacity-0' : 'translate-x-0 opacity-100 delay-150'
+            }`}
+          >
             {navLinks.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`text-sm font-semibold transition-colors duration-300 ${scrolled ? 'text-slate-600 hover:text-cyan-600' : 'text-slate-200 hover:text-white'}`}
+                className="text-sm font-semibold text-slate-600 transition-colors duration-300 hover:text-cyan-600"
               >
                 {item.name}
               </a>
             ))}
-            <Button variant="dark" size="md" className="gap-2" onClick={() => window.open('https://wa.me/5491165532832', '_blank')}>
-              <MessageCircle className="w-4 h-4" /> 11 6553-2832
+            <Button variant="dark" size="md" className="gap-2" onClick={() => window.open(WHATSAPP_PROPOSAL_URL, '_blank')}>
+              <WhatsAppIcon className="w-4 h-4" /> Pedir propuesta
             </Button>
           </div>
 
-          <button className={`md:hidden p-2 rounded-lg transition-colors ${scrolled || isOpen ? 'text-slate-900' : 'text-white'}`} onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="lg:hidden p-2 rounded-lg text-slate-900 transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isOpen}
+          >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Menú móvil mejorado con fondo opaco y mejor contraste */}
-      <div className={`md:hidden fixed inset-x-0 top-0 pt-20 pb-10 px-6 bg-white shadow-2xl transition-all duration-300 ease-in-out z-[-1] border-b border-slate-100 ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
+      <div className={`lg:hidden absolute inset-x-0 top-full pb-10 px-6 bg-white shadow-2xl transition-all duration-300 ease-in-out border-b border-slate-100 ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
         <div className="flex flex-col gap-6">
           {navLinks.map((item) => (
             <a
@@ -87,13 +117,14 @@ export const Navbar = () => {
             className="w-full py-5 text-lg flex gap-3"
             onClick={() => {
               setIsOpen(false);
-              window.open('https://wa.me/5491165532832', '_blank');
+              window.open(WHATSAPP_PROPOSAL_URL, '_blank');
             }}
           >
-            <MessageCircle className="w-6 h-6" /> Consultar por WhatsApp
+            <WhatsAppIcon className="w-6 h-6" /> Pedir propuesta por WhatsApp
           </Button>
         </div>
       </div>
     </nav>
   );
 };
+

@@ -1,48 +1,58 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Badge } from '../atoms/Badge';
 
 export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const faqs = [
-    { 
-      q: "¿El agua es realmente ilimitada?", 
-      a: "Sí. Al estar conectado a la red, el equipo provee agua purificada sin límites de consumo, las 24 horas del día, garantizando que su oficina nunca se quede sin suministro, sin importar la cantidad de personas." 
-    },
-    { 
-      q: "¿Funciona con agua de red?", 
-      a: "Sí. El sistema filtra y purifica el agua de red en el momento de uso mediante tecnología de última generación que elimina sedimentos, cloro, sabores y olores desagradables." 
-    },
-    { 
-      q: "¿Se puede instalar en cualquier oficina?", 
-      a: "En la mayoría de los casos, sí. Contamos con distintas formas de conexión prolija y estética que no requieren romper paredes ni realizar reformas complejas en su espacio de trabajo." 
-    },
-    { 
-      q: "¿Es más caro que los bidones?", 
-      a: "El alquiler mensual de Aquamaría evita costos ocultos como logística, almacenamiento y pérdida de tiempo. En empresas con más de 5 personas, suele representar un ahorro operativo inmediato." 
-    },
-    { 
-      q: "¿Cuánto demora la instalación?", 
-      a: "El proceso es rápido, limpio y profesional. Suele realizarse en menos de una hora por nuestros técnicos especializados, sin interrumpir la jornada laboral de su equipo." 
-    }
-  ];
+const faqs = [
+  {
+    q: '¿Qué incluye el servicio mensual?',
+    a: 'Incluye el equipo conectado a red, mantenimiento, recambio anual de filtro y soporte técnico 24 hs.'
+  },
+  {
+    q: '¿La instalación se cobra aparte?',
+    a: 'Sí. La instalación se abona una única vez al inicio del servicio.'
+  },
+  {
+    q: '¿Cómo sé qué equipo me conviene?',
+    a: 'Evaluamos el tipo de espacio, el consumo aproximado, la ubicación y el uso diario para recomendar la opción más adecuada.'
+  },
+  {
+    q: '¿En qué zonas trabajan?',
+    a: 'Trabajamos en CABA y Gran Buenos Aires.'
+  },
+  {
+    q: '¿Sirve para comercios?',
+    a: 'Sí. Es una solución para locales, salas de espera y espacios de atención que necesitan agua disponible de forma prolija y continua.'
+  },
+  {
+    q: '¿Cada cuánto se cambia el filtro?',
+    a: 'El filtro se renueva una vez por año como parte del mantenimiento incluido.'
+  },
+  {
+    q: '¿Qué pasa si el equipo tiene un problema?',
+    a: 'Contás con soporte técnico 24 hs para recibir asistencia ante cualquier inconveniente.'
+  },
+  {
+    q: '¿Reemplaza los bidones?',
+    a: 'Sí. El equipo se conecta a la red y evita la compra, almacenamiento y recambio de bidones.'
+  },
+  {
+    q: '¿También instalan en hogares?',
+    a: 'Sí, en hogares compatibles con instalación a red. El servicio está pensado principalmente para empresas, comercios y oficinas.'
+  }
+];
 
   return (
-    <section id="faq" className="py-24 bg-slate-50">
+    <section id="faq" className="py-16 md:py-24 bg-slate-50">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge variant="cyan">Centro de Ayuda</Badge>
+          <Badge variant="cyan">Centro de ayuda</Badge>
           <h2 className="text-4xl font-extrabold text-slate-900 mt-6 tracking-tight">Preguntas frecuentes</h2>
         </div>
-        
-        {/* 
-            Contenedor con altura mínima fija para estabilizar el layout vertical.
-            Esto evita que las secciones inferiores (como el CTA final) se desplacen 
-            bruscamente cuando el usuario interactúa con el acordeón.
-        */}
-        <div className="space-y-4 min-h-[580px] md:min-h-[620px]">
+
+        <div className="space-y-4 min-h-[760px] md:min-h-[820px]">
           {faqs.map((faq, i) => (
             <div 
               key={i} 
@@ -55,7 +65,7 @@ export const FAQSection = () => {
                 className="w-full p-6 flex items-center justify-between text-left font-bold text-slate-900 group focus:outline-none focus:ring-2 focus:ring-cyan-500/20 rounded-2xl"
                 aria-expanded={openIndex === i}
               >
-                <span className={`transition-colors duration-300 ${openIndex === i ? 'text-cyan-600' : 'text-slate-900'}`}>
+                <span className={`transition-colors duration-300 pr-4 ${openIndex === i ? 'text-cyan-600' : 'text-slate-900'}`}>
                   {faq.q}
                 </span>
                 <ChevronDown 
@@ -64,8 +74,7 @@ export const FAQSection = () => {
                   }`} 
                 />
               </button>
-              
-              {/* Animación de expansión suave mediante Grid Layout */}
+
               <div 
                 className={`grid transition-all duration-500 ease-in-out ${
                   openIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'

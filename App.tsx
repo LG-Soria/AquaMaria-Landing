@@ -1,7 +1,7 @@
 
-import React from 'react';
-import { MessageCircle } from 'lucide-react';
 import { Button } from './components/atoms/Button';
+import { WhatsAppIcon } from './components/atoms/WhatsAppIcon';
+import { WHATSAPP_PROPOSAL_URL } from './contact';
 
 // Organisms
 import { Navbar } from './components/organisms/Navbar';
@@ -12,6 +12,7 @@ import { HowItWorks } from './components/organisms/HowItWorks';
 import { RentalIncludes } from './components/organisms/RentalIncludes';
 import { BenefitsSection } from './components/organisms/BenefitsSection';
 import { EquipmentSection } from './components/organisms/EquipmentSection';
+import { InstallationsSection } from './components/organisms/InstallationsSection';
 import { FAQSection } from './components/organisms/FAQSection';
 import { FinalCTA } from './components/organisms/FinalCTA';
 import { Footer } from './components/organisms/Footer';
@@ -29,6 +30,7 @@ export default function App() {
         <RentalIncludes />
         <BenefitsSection />
         <EquipmentSection />
+        <InstallationsSection />
         <FAQSection />
         <FinalCTA />
       </main>
@@ -36,10 +38,10 @@ export default function App() {
       <Footer />
       
       {/* WhatsApp Floating Button */}
-      <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-40">
-        <a href="https://wa.me/5491165532832" target="_blank" rel="noopener noreferrer">
-          <Button className="bg-[#25D366] hover:bg-[#128C7E] text-white p-5 rounded-2xl shadow-[0_20px_50px_rgba(37,211,102,0.3)] border-none hover:scale-110 active:scale-95 transition-all">
-            <MessageCircle className="w-7 h-7 fill-current" />
+      <div className="fixed bottom-4 right-4 md:bottom-10 md:right-10 z-40">
+        <a href={WHATSAPP_PROPOSAL_URL} target="_blank" rel="noopener noreferrer" aria-label="Pedir propuesta por WhatsApp">
+          <Button className="bg-[#25D366] hover:bg-[#128C7E] text-white p-4 md:p-5 rounded-2xl shadow-[0_20px_50px_rgba(37,211,102,0.3)] border-none hover:scale-110 active:scale-95 transition-all">
+            <WhatsAppIcon className="w-6 h-6 md:w-7 md:h-7" />
           </Button>
         </a>
       </div>

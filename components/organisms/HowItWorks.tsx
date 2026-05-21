@@ -1,20 +1,18 @@
-
-import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { Badge } from '../atoms/Badge';
 
 export const HowItWorks = () => (
-  <section className="py-24 bg-slate-50">
+  <section id="como-funciona" className="py-16 md:py-24 bg-slate-50">
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
-      <div className="flex flex-col md:flex-row gap-16 items-start">
+      <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
         <div className="md:w-1/3">
-          <Badge>Proceso Simple</Badge>
-          <h2 className="text-4xl font-extrabold text-slate-900 mt-6 mb-8 tracking-tight leading-tight">Simple, rápido y sin obras</h2>
+          <Badge>Cómo empezamos</Badge>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mt-6 mb-8 tracking-tight leading-tight">Cómo funciona el servicio</h2>
           <div className="space-y-4 text-slate-600 font-medium">
              {[
-               "Se puede conectar a canilla, mesada o toma existente",
-               "No se pierde funcionalidad de la instalación",
-               "No requiere reformas ni trabajos complejos"
+               'Evaluamos tu espacio antes de recomendar un equipo.',
+               'Coordinamos una instalación prolija y adaptada al lugar.',
+               'Después de instalar, seguimos acompañando con mantenimiento y soporte.',
              ].map((text, i) => (
                <div key={i} className="flex items-start gap-3">
                  <CheckCircle2 className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
@@ -23,16 +21,22 @@ export const HowItWorks = () => (
              ))}
           </div>
         </div>
-        <div className="md:w-2/3 grid sm:grid-cols-3 gap-8">
+        <div className="md:w-2/3 grid sm:grid-cols-2 gap-6">
           {[
-            { step: "01", title: "Evaluación", desc: "Evaluamos el espacio y el punto de conexión más conveniente." },
-            { step: "02", title: "Instalación", desc: "Instalamos el equipo en menos de 1 hora de forma profesional." },
-            { step: "03", title: "Listo", desc: "El dispenser queda listo para usar de inmediato por todo el equipo." }
+            { step: '01', title: 'Nos contás sobre tu espacio', desc: 'Zona, tipo de lugar y cantidad aproximada de personas.' },
+            { step: '02', title: 'Te recomendamos la opción adecuada', desc: 'Definimos el equipo según consumo, ubicación y necesidad.' },
+            { step: '03', title: 'Instalamos el purificador', desc: 'Coordinamos la instalación y dejamos el equipo conectado a la red.' },
+            { step: '04', title: 'Seguimos acompañando', desc: 'Incluye mantenimiento, recambio anual de filtro y soporte técnico 24 hs.' }
           ].map((item, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden group">
-              <span className="text-6xl font-black text-slate-50 absolute -top-2 -right-2 transition-transform group-hover:scale-110">{item.step}</span>
+            <div key={i} className="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden group min-h-[230px]">
+              <span
+                className="service-step-number text-7xl font-black absolute top-3 right-6 transition-transform group-hover:scale-105"
+                style={{ animationDelay: `${i * 1.5}s` }}
+              >
+                {item.step}
+              </span>
               <div className="relative z-10">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-4">{item.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             </div>

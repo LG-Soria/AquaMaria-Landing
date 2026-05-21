@@ -1,42 +1,41 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import { Badge } from '../atoms/Badge';
 
 export const ProblemSection = () => {
-  const imageRef = useRef<HTMLDivElement | null>(null);
-  const scrollDelayRef = useRef<number | null>(null);
-  const [showScrollSolution, setShowScrollSolution] = useState(false);
+  const [showMobileSolution, setShowMobileSolution] = useState(false);
 
   useEffect(() => {
-    const imageNode = imageRef.current;
-    const isTouchLayout = window.matchMedia('(max-width: 1023px)').matches;
+    const mobileQuery = window.matchMedia('(max-width: 1023px)');
+    let intervalId: number | null = null;
 
-    if (!imageNode || !isTouchLayout) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (scrollDelayRef.current) {
-          window.clearTimeout(scrollDelayRef.current);
-        }
-
-        if (entry.isIntersecting) {
-          scrollDelayRef.current = window.setTimeout(() => setShowScrollSolution(true), 650);
-        } else {
-          setShowScrollSolution(false);
-        }
-      },
-      {
-        rootMargin: '-35% 0px -25% 0px',
-        threshold: 0.2
+    const stopMobileLoop = () => {
+      if (intervalId) {
+        window.clearInterval(intervalId);
+        intervalId = null;
       }
-    );
+    };
 
-    observer.observe(imageNode);
+    const syncMobileLoop = () => {
+      stopMobileLoop();
+
+      if (!mobileQuery.matches) {
+        setShowMobileSolution(false);
+        return;
+      }
+
+      setShowMobileSolution(false);
+      intervalId = window.setInterval(() => {
+        setShowMobileSolution((current) => !current);
+      }, 3200);
+    };
+
+    syncMobileLoop();
+    mobileQuery.addEventListener('change', syncMobileLoop);
+
     return () => {
-      if (scrollDelayRef.current) {
-        window.clearTimeout(scrollDelayRef.current);
-      }
-      observer.disconnect();
+      stopMobileLoop();
+      mobileQuery.removeEventListener('change', syncMobileLoop);
     };
   }, []);
 
@@ -65,19 +64,19 @@ export const ProblemSection = () => {
               ))}
             </div>
           </div>
-          <div ref={imageRef} className="group relative">
+          <div className="group relative">
             <div className="relative aspect-square rounded-[3rem] bg-slate-100 overflow-hidden shadow-2xl">
               <img
                 src="/images/section_problema/problema-bidones-acumulados.jpg"
                 className={`absolute inset-0 w-full h-full object-cover grayscale transition-[opacity,filter,transform] duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:opacity-20 lg:group-hover:grayscale-0 lg:group-hover:scale-[1.02] ${
-                  showScrollSolution ? 'opacity-20 grayscale-0' : 'opacity-80'
+                  showMobileSolution ? 'opacity-20 grayscale-0' : 'opacity-80'
                 }`}
                 alt="Bidones de agua acumulados en un espacio de trabajo"
               />
               <img
                 src="/images/section_problema/2.png"
                 className={`absolute inset-0 w-full h-full object-cover transition-[opacity,transform] duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:opacity-0 lg:scale-[1.03] lg:group-hover:opacity-100 lg:group-hover:scale-100 ${
-                  showScrollSolution ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.03]'
+                  showMobileSolution ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.03]'
                 }`}
                 alt="Dispenser AquaMaría instalado en una oficina"
                 loading="lazy"
@@ -85,7 +84,7 @@ export const ProblemSection = () => {
             </div>
             <div className="relative mt-4 glass-light p-6 rounded-3xl shadow-xl border border-slate-200 lg:absolute lg:-bottom-6 lg:-right-6 lg:mt-0 lg:max-w-xs lg:p-8">
               <p className="text-slate-900 font-bold italic">
-                Con <span className={`transition-colors duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:text-cyan-600 ${showScrollSolution ? 'text-cyan-600' : 'text-slate-900'}`}>AquaMaría</span>, el agua deja de gestionarse con bidones y queda disponible desde la red.
+                Con <span className={`transition-colors duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:text-cyan-600 ${showMobileSolution ? 'text-cyan-600' : 'text-slate-900'}`}>AquaMaría</span>, el agua deja de gestionarse con bidones y queda disponible desde la red.
               </p>
             </div>
           </div>

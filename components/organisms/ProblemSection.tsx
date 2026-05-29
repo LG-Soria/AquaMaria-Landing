@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import { Badge } from '../atoms/Badge';
 
@@ -84,14 +84,14 @@ export const ProblemSection = () => {
                 className={`absolute inset-0 w-full h-full object-cover transition-[opacity,transform] duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:opacity-0 lg:scale-[1.03] lg:group-hover:opacity-100 lg:group-hover:scale-100 ${
                   showMobileSolution ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.03]'
                 }`}
-                alt="Dispenser AquaMaría instalado en una oficina"
+                alt="Dispenser AquaMaria instalado en una oficina"
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <div className="relative mt-4 glass-light p-6 rounded-3xl shadow-xl border border-slate-200 lg:absolute lg:-bottom-6 lg:-right-6 lg:mt-0 lg:max-w-xs lg:p-8">
               <p className="text-slate-900 font-bold italic">
-                Con <span className={`transition-colors duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:text-cyan-600 ${showMobileSolution ? 'text-cyan-600' : 'text-slate-900'}`}>AquaMaría</span>, el agua deja de gestionarse con bidones y queda disponible desde la red.
+                Con <span className={`transition-colors duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:text-cyan-600 ${showMobileSolution ? 'text-cyan-600' : 'text-slate-900'}`}>AquaMaria</span>, el agua deja de gestionarse con bidones y queda disponible desde la red.
               </p>
             </div>
           </div>

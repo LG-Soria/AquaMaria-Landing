@@ -1,8 +1,8 @@
-# Instrucciones para Codex — Ajustes landing AquaMaría
+﻿# Instrucciones para Codex — Ajustes landing AquaMaria
 
 ## 1. Objetivo del trabajo
 
-Actualizar la landing de AquaMaría para que funcione mejor como filtro comercial B2B, reforzando el foco en empresas y comercios, elevando la percepción de valor del servicio mensual y mejorando la calidad de las consultas que llegan por WhatsApp.
+Actualizar la landing de AquaMaria para que funcione mejor como filtro comercial B2B, reforzando el foco en empresas y comercios, elevando la percepción de valor del servicio mensual y mejorando la calidad de las consultas que llegan por WhatsApp.
 
 No se busca un rediseño completo desde cero. La prioridad es utilizar la estructura, componentes, estilos y recursos ya existentes en el proyecto siempre que sea posible.
 
@@ -12,9 +12,9 @@ La intervención debe mejorar el mensaje, la jerarquía de contenidos y la clari
 
 ## 2. Dirección estratégica
 
-AquaMaría debe posicionarse como una solución profesional de agua purificada para empresas y comercios que quieren eliminar la logística de bidones y contar con un servicio claro, continuo y confiable.
+AquaMaria debe posicionarse como una solución profesional de agua purificada para empresas y comercios que quieren eliminar la logística de bidones y contar con un servicio claro, continuo y confiable.
 
-La landing debe comunicar que AquaMaría ofrece:
+La landing debe comunicar que AquaMaria ofrece:
 
 * servicio mensual;
 * equipos conectados a red;
@@ -95,7 +95,7 @@ La landing debe mantener una lógica clara y comercial:
 1. Hero
 2. Prueba social / respaldo
 3. Problema operativo de los bidones
-4. Solución mensual AquaMaría
+4. Solución mensual AquaMaria
 5. Para quién es
 6. Cómo funciona
 7. Opciones de equipos
@@ -111,7 +111,7 @@ Si la estructura actual ya contiene secciones equivalentes, adaptar las existent
 
 ## 7.1 Hero
 
-Objetivo: dejar claro en pocos segundos qué ofrece AquaMaría, para quién es y qué problema elimina.
+Objetivo: dejar claro en pocos segundos qué ofrece AquaMaria, para quién es y qué problema elimina.
 
 Debe comunicar:
 
@@ -154,7 +154,7 @@ Texto posible:
 
 **Más de 10 años acompañando a empresas y comercios**
 
-**Más de 200 empresas, oficinas y comercios ya confiaron en AquaMaría para resolver el agua diaria de sus espacios.**
+**Más de 200 empresas, oficinas y comercios ya confiaron en AquaMaria para resolver el agua diaria de sus espacios.**
 
 ---
 
@@ -182,11 +182,11 @@ Puntos a comunicar:
 
 Cierre posible:
 
-**Con AquaMaría, el agua está disponible desde la red, sin depender de bidones.**
+**Con AquaMaria, el agua está disponible desde la red, sin depender de bidones.**
 
 ---
 
-## 7.4 Solución mensual AquaMaría
+## 7.4 Solución mensual AquaMaria
 
 Objetivo: explicar claramente qué incluye el servicio y preencuadrar la relación comercial.
 
@@ -286,7 +286,7 @@ La sección debería llamarse:
 
 Texto sugerido:
 
-**Conocé algunos espacios donde AquaMaría ya ayuda a resolver el agua diaria sin bidones, con equipos instalados de forma prolija y funcional.**
+**Conocé algunos espacios donde AquaMaria ya ayuda a resolver el agua diaria sin bidones, con equipos instalados de forma prolija y funcional.**
 
 Indicaciones:
 

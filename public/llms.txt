@@ -1,6 +1,6 @@
-# AquaMaría
+﻿# AquaMaria
 
-AquaMaría ofrece un servicio mensual de agua purificada para empresas, comercios y oficinas. La solución usa equipos conectados a red para evitar la compra, almacenamiento y recambio de bidones.
+AquaMaria ofrece un servicio mensual de agua purificada para empresas, comercios y oficinas. La solución usa equipos conectados a red para evitar la compra, almacenamiento y recambio de bidones.
 
 ## Qué ofrece
 

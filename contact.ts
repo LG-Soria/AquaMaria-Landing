@@ -1,6 +1,6 @@
-const env = (import.meta as unknown as { env?: Record<string, string | undefined> }).env ?? {};
+﻿const env = (import.meta as unknown as { env?: Record<string, string | undefined> }).env ?? {};
 
-export const BRAND_NAME = 'AquaMaría';
+export const BRAND_NAME = 'AquaMaria';
 export const SITE_URL = (env.VITE_PUBLIC_SITE_URL || 'https://www.aquamaria.com.ar').replace(/\/$/, '');
 export const WHATSAPP_PHONE_E164 = '+5491165532832';
 export const WHATSAPP_PHONE_DISPLAY = '11 6553-2832';

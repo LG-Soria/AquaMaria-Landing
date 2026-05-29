@@ -1,8 +1,8 @@
-# Reporte de SEO, medición e IA
+﻿# Reporte de SEO, medición e IA
 
 ## Resumen ejecutivo
 
-Se mejoró la landing principal de AquaMaría en tres frentes: SEO técnico, medición de campañas y legibilidad para agentes de IA. El proyecto usa React + Vite, por lo que los cambios se aplicaron en `index.html`, `public/` y componentes React existentes, sin rediseñar la interfaz.
+Se mejoró la landing principal de AquaMaria en tres frentes: SEO técnico, medición de campañas y legibilidad para agentes de IA. El proyecto usa React + Vite, por lo que los cambios se aplicaron en `index.html`, `public/` y componentes React existentes, sin rediseñar la interfaz.
 
 La landing ahora tiene metadata específica, canonical, Open Graph, Twitter Card, robots, sitemap, JSON-LD, `llms.txt`, una imagen social dedicada, CTAs reales como links cuando llevan a WhatsApp y una capa de tracking configurable por variables de entorno.
 
@@ -59,7 +59,7 @@ No se agregó `LocalBusiness` porque no hay dirección física publicada en el p
 
 ## Optimización para agentes de IA
 
-Los cambios ayudan a sistemas conversacionales y agentes de búsqueda porque la entidad queda explícita: AquaMaría, servicio mensual de agua purificada, equipos conectados a red, público objetivo, cobertura, contacto y preguntas frecuentes.
+Los cambios ayudan a sistemas conversacionales y agentes de búsqueda porque la entidad queda explícita: AquaMaria, servicio mensual de agua purificada, equipos conectados a red, público objetivo, cobertura, contacto y preguntas frecuentes.
 
 Se agregó `public/llms.txt` con un resumen honesto del negocio, páginas importantes, datos de contacto e instrucciones básicas para agentes. No se presenta como garantía de compatibilidad universal, porque `llms.txt` todavía no es un estándar formal para todos los sistemas.
 

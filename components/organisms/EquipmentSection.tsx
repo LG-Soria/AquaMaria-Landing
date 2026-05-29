@@ -1,4 +1,4 @@
-import { Badge } from '../atoms/Badge';
+﻿import { Badge } from '../atoms/Badge';
 
 export const EquipmentSection = () => (
   <section id="equipos" className="py-16 md:py-24 bg-white">
@@ -54,7 +54,7 @@ export const EquipmentSection = () => (
                 loading="lazy"
                 decoding="async"
                 className={`w-full h-full object-cover ${item.pos} group-hover:scale-105 transition-transform duration-700`}
-                alt={`${item.title} para servicio mensual de agua purificada AquaMaría`}
+                alt={`${item.title} para servicio mensual de agua purificada AquaMaria`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"></div>
             </div>

@@ -1,4 +1,4 @@
-import { Instagram, Phone, MapPin } from 'lucide-react';
+﻿import { Instagram, Phone, MapPin } from 'lucide-react';
 import { Logo } from '../atoms/Logo';
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL, SERVICE_AREA, WHATSAPP_PHONE_DISPLAY, WHATSAPP_PROPOSAL_URL } from '../../contact';
 import { trackCtaClick, trackWhatsAppClick } from '../../tracking';
@@ -106,7 +106,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-50 gap-6 text-center md:text-left">
-        <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">© {currentYear} AquaMaría. Servicio mensual con instalación, mantenimiento y soporte.</p>
+        <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">© {currentYear} AquaMaria. Servicio mensual con instalación, mantenimiento y soporte.</p>
         <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">+10 años acompañando empresas y comercios.</p>
       </div>
       <p className="mt-8 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-300">

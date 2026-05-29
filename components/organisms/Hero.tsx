@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Sparkles, Building2, MapPin, Calendar, Headphones } from 'lucide-react';
 import { Button, ButtonLink } from '../atoms/Button';
 import { Badge } from '../atoms/Badge';
@@ -48,7 +48,7 @@ const HeroContent = () => {
           <>
             <img
               src="/images/Portadas/3.png"
-              alt="Dispenser de agua AquaMaría instalado en un espacio de trabajo"
+              alt="Dispenser de agua AquaMaria instalado en un espacio de trabajo"
               width="1672"
               height="941"
               fetchPriority="high"
@@ -67,7 +67,7 @@ const HeroContent = () => {
         ) : (
           <img
             src="/images/Portadas/3.png"
-            alt="Dispenser de agua AquaMaría instalado en un espacio de trabajo"
+            alt="Dispenser de agua AquaMaria instalado en un espacio de trabajo"
             width="1672"
             height="941"
             fetchPriority="high"

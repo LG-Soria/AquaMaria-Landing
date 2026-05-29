@@ -1,4 +1,4 @@
-import { Badge } from '../atoms/Badge';
+﻿import { Badge } from '../atoms/Badge';
 
 const installations = [
   { src: '/images/instalaciones/3.png', caption: 'Oficina', width: 1122, height: 1402, className: 'md:col-span-2 md:row-span-2', position: 'object-[68%_center]' },
@@ -23,7 +23,7 @@ export const InstallationsSection = () => (
           <figure key={item.src} className={`group relative overflow-hidden rounded-[2rem] bg-slate-100 shadow-lg ${item.className}`}>
             <img
               src={item.src}
-              alt={`Instalación real AquaMaría en ${item.caption.toLowerCase()}`}
+              alt={`Instalación real AquaMaria en ${item.caption.toLowerCase()}`}
               width={item.width}
               height={item.height}
               loading="lazy"

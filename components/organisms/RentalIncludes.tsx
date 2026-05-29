@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { CalendarClock, Settings, Droplets, Wrench, ShieldCheck, CheckCircle2, RefreshCw, MapPin } from 'lucide-react';
 import { Badge } from '../atoms/Badge';
 
@@ -19,7 +19,7 @@ export const RentalIncludes = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge variant="cyan">Qué incluye</Badge>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-6 mb-8 tracking-tight">El servicio mensual de AquaMaría</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-6 mb-8 tracking-tight">El servicio mensual de AquaMaria</h2>
           <p className="text-slate-500 max-w-3xl mx-auto leading-relaxed">Un servicio claro y confiable para que tu espacio tenga agua purificada todos los días, con mantenimiento incluido y sin depender de pedidos, recambios o stock de bidones.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

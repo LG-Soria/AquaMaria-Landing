@@ -1,6 +1,7 @@
 import { Instagram, Phone, MapPin } from 'lucide-react';
 import { Logo } from '../atoms/Logo';
-import { WHATSAPP_PROPOSAL_URL } from '../../contact';
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, SERVICE_AREA, WHATSAPP_PHONE_DISPLAY, WHATSAPP_PROPOSAL_URL } from '../../contact';
+import { trackCtaClick, trackWhatsAppClick } from '../../tracking';
 
 const currentYear = new Date().getFullYear();
 
@@ -38,13 +39,37 @@ export const Footer = () => (
         <div className="lg:col-span-3 space-y-8">
           <h4 className="font-black text-slate-900 text-xs uppercase tracking-[0.3em]">Contacto</h4>
           <div className="space-y-4">
-             <a href={WHATSAPP_PROPOSAL_URL} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 text-slate-600 hover:text-cyan-600 font-bold transition-colors">
+             <a
+               href={WHATSAPP_PROPOSAL_URL}
+               target="_blank"
+               rel="noopener noreferrer"
+               onClick={() =>
+                 trackWhatsAppClick({
+                   cta_location: 'footer_contact',
+                   cta_text: `WhatsApp: ${WHATSAPP_PHONE_DISPLAY}`,
+                 })
+               }
+               className="flex items-start gap-4 text-slate-600 hover:text-cyan-600 font-bold transition-colors"
+             >
                 <Phone className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                <p><span className="text-slate-900">WhatsApp:</span> 11 6553-2832</p>
+                <p><span className="text-slate-900">WhatsApp:</span> {WHATSAPP_PHONE_DISPLAY}</p>
              </a>
-             <a href="https://instagram.com/aquamariared" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 text-slate-600 hover:text-cyan-600 font-bold transition-colors">
+             <a
+               href={INSTAGRAM_URL}
+               target="_blank"
+               rel="noopener noreferrer"
+               onClick={() =>
+                 trackCtaClick({
+                   cta_location: 'footer_contact',
+                   cta_text: `Instagram: ${INSTAGRAM_HANDLE}`,
+                   cta_type: 'social',
+                   destination: INSTAGRAM_URL,
+                 })
+               }
+               className="flex items-start gap-4 text-slate-600 hover:text-cyan-600 font-bold transition-colors"
+             >
                 <Instagram className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                <p><span className="text-slate-900">Instagram:</span> @aquamariared</p>
+                <p><span className="text-slate-900">Instagram:</span> {INSTAGRAM_HANDLE}</p>
              </a>
           </div>
         </div>
@@ -57,6 +82,12 @@ export const Footer = () => (
                 href={link.href}
                 onClick={(event) => {
                   event.preventDefault();
+                  trackCtaClick({
+                    cta_location: 'footer_navigation',
+                    cta_text: link.label,
+                    cta_type: 'navigation',
+                    destination: link.href,
+                  });
                   scrollToSection(link.href);
                 }}
                 className="block text-slate-500 hover:text-cyan-600 font-bold text-sm transition-colors"
@@ -70,7 +101,7 @@ export const Footer = () => (
           <h4 className="font-black text-slate-900 text-xs uppercase tracking-[0.3em]">Zona de servicio</h4>
           <p className="text-slate-500 font-bold text-sm leading-relaxed flex gap-3">
             <MapPin className="w-5 h-5 text-cyan-500 shrink-0" />
-            CABA y Gran Buenos Aires.
+            {SERVICE_AREA}.
           </p>
         </div>
       </div>

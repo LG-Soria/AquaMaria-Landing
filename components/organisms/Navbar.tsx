@@ -1,9 +1,10 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Button } from '../atoms/Button';
+import { ButtonLink } from '../atoms/Button';
 import { Logo } from '../atoms/Logo';
 import { WhatsAppIcon } from '../atoms/WhatsAppIcon';
 import { WHATSAPP_PROPOSAL_URL } from '../../contact';
+import { trackCtaClick, trackWhatsAppClick } from '../../tracking';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +28,13 @@ export const Navbar = () => {
     e.preventDefault();
     const targetId = href.replace('#', '');
     const elem = document.getElementById(targetId);
+
+    trackCtaClick({
+      cta_location: 'navbar',
+      cta_text: e.currentTarget.textContent || targetId,
+      cta_type: 'navigation',
+      destination: href,
+    });
 
     if (elem) {
       const offset = 80;
@@ -84,9 +92,22 @@ export const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <Button variant="dark" size="md" className="gap-2" onClick={() => window.open(WHATSAPP_PROPOSAL_URL, '_blank')}>
+            <ButtonLink
+              href={WHATSAPP_PROPOSAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="dark"
+              size="md"
+              className="gap-2"
+              onClick={() =>
+                trackWhatsAppClick({
+                  cta_location: 'navbar_desktop',
+                  cta_text: 'Pedir propuesta',
+                })
+              }
+            >
               <WhatsAppIcon className="w-4 h-4" /> Pedir propuesta
-            </Button>
+            </ButtonLink>
           </div>
 
           <button
@@ -112,16 +133,22 @@ export const Navbar = () => {
               {item.name}
             </a>
           ))}
-          <Button
+          <ButtonLink
+            href={WHATSAPP_PROPOSAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             variant="dark"
             className="w-full py-5 text-lg flex gap-3"
             onClick={() => {
               setIsOpen(false);
-              window.open(WHATSAPP_PROPOSAL_URL, '_blank');
+              trackWhatsAppClick({
+                cta_location: 'navbar_mobile',
+                cta_text: 'Pedir propuesta por WhatsApp',
+              });
             }}
           >
             <WhatsAppIcon className="w-6 h-6" /> Pedir propuesta por WhatsApp
-          </Button>
+          </ButtonLink>
         </div>
       </div>
     </nav>

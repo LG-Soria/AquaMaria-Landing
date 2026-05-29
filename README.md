@@ -14,6 +14,11 @@
 - Build de produccion: `npm run build`
 - Vista previa del build: `npm run preview`
 
+**Medicion y SEO**
+- Copiar `.env.example` a `.env.local` y completar los IDs publicos de medicion si se usan GA4, GTM o Meta Pixel.
+- Variables disponibles: `VITE_PUBLIC_SITE_URL`, `VITE_PUBLIC_GA_ID`, `VITE_PUBLIC_GTM_ID`, `VITE_PUBLIC_META_PIXEL_ID`.
+- `public/robots.txt`, `public/sitemap.xml` y `public/llms.txt` se publican junto con el build.
+
 **Estructura breve**
 - `App.tsx`: arma la landing y el boton flotante de WhatsApp.
 - `components/`: atoms, molecules y organisms.
@@ -22,5 +27,5 @@
 - `types.ts`: tipos compartidos para productos, planes y asesor.
 
 **Notas**
-- Numero de WhatsApp actual: `5491165532832` (editar en `App.tsx` y `components/organisms/FinalCTA.tsx` si cambia).
-- Imagenes y video se sirven desde URLs publicas (Unsplash/Mixkit); cambia las rutas si necesitas assets propios.
+- Numero de WhatsApp actual: `5491165532832` (editar en `contact.ts` si cambia).
+- Imagenes principales se sirven desde `public/images`; revisar peso y dimensiones si se reemplazan assets.

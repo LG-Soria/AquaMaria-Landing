@@ -8,7 +8,7 @@ export const SolutionSection = () => (
     <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
       <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
         <Badge variant="cyan">Servicio mensual AquaMaría</Badge>
-        <h2 className="text-3xl md:text-5xl font-extrabold mt-6 mb-8 tracking-tight"> Instalamos el equipo y nos ocupamos del mantenimiento</h2>
+        <h2 className="text-3xl md:text-5xl font-extrabold mt-6 mb-8 tracking-tight">Instalamos el equipo y nos ocupamos del mantenimiento</h2>
         <p className="text-slate-400 text-lg">
      Definimos el equipo adecuado para tu espacio, lo conectamos a la red y sostenemos el servicio en el tiempo para que el agua esté disponible todos los días. </p>
       </div>

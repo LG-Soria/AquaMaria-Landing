@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Sparkles, Building2, MapPin, Calendar, Headphones } from 'lucide-react';
-import { Button } from '../atoms/Button';
+import { Button, ButtonLink } from '../atoms/Button';
 import { Badge } from '../atoms/Badge';
 import { WhatsAppIcon } from '../atoms/WhatsAppIcon';
 import { WHATSAPP_PROPOSAL_URL } from '../../contact';
+import { trackCtaClick, trackWhatsAppClick } from '../../tracking';
 
 const ENABLE_HERO_IMAGE_ROTATION = true;
 const HERO_IMAGE_ROTATION_INTERVAL_MS = 6000;
@@ -47,19 +48,29 @@ const HeroContent = () => {
           <>
             <img
               src="/images/Portadas/3.png"
-              alt=""
+              alt="Dispenser de agua AquaMaría instalado en un espacio de trabajo"
+              width="1672"
+              height="941"
+              fetchPriority="high"
               className={`${heroImageClassName} hero-bg-image-layer ${showAlternativeImage ? 'opacity-0' : 'opacity-100'}`}
             />
             <img
               src="/images/Portadas/2.png"
               alt=""
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
               className={`${heroImageClassName} hero-bg-image-layer ${showAlternativeImage ? 'opacity-100' : 'opacity-0'}`}
             />
           </>
         ) : (
           <img
             src="/images/Portadas/3.png"
-            alt=""
+            alt="Dispenser de agua AquaMaría instalado en un espacio de trabajo"
+            width="1672"
+            height="941"
+            fetchPriority="high"
             className={heroImageClassName}
           />
         )}
@@ -99,19 +110,35 @@ const HeroContent = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 md:gap-5">
-          <Button
+          <ButtonLink
+            href={WHATSAPP_PROPOSAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             size="lg"
             className="gap-3 w-full sm:w-auto bg-[#25D366] hover:bg-[#128C7E] text-white border-none shadow-2xl shadow-green-500/20 py-4 md:py-5"
-            onClick={() => window.open(WHATSAPP_PROPOSAL_URL, '_blank')}
+            onClick={() =>
+              trackWhatsAppClick({
+                cta_location: 'hero',
+                cta_text: 'Pedir propuesta para mi empresa o comercio',
+              })
+            }
           >
             <WhatsAppIcon className="w-5 h-5 shrink-0" />
-            <span className="leading-tight">Pedir propuesta para mi negocio</span>
-          </Button>
+            <span className="leading-tight">Pedir propuesta para mi empresa o comercio</span>
+          </ButtonLink>
           <Button
             variant="glass"
             size="lg"
             className="w-full sm:w-auto py-4 md:py-5"
-            onClick={() => document.getElementById('como-funciona')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              trackCtaClick({
+                cta_location: 'hero',
+                cta_text: 'Ver cómo funciona',
+                cta_type: 'secondary',
+                destination: '#como-funciona',
+              });
+              document.getElementById('como-funciona')?.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             Ver cómo funciona
           </Button>

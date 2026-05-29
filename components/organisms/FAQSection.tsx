@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Badge } from '../atoms/Badge';
+import { trackEvent } from '../../tracking';
 
 export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -61,9 +62,19 @@ const faqs = [
               }`}
             >
               <button 
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                onClick={() => {
+                  const willOpen = openIndex !== i;
+                  setOpenIndex(willOpen ? i : null);
+                  if (willOpen) {
+                    trackEvent('faq_open', {
+                      question: faq.q,
+                      cta_location: 'faq',
+                    });
+                  }
+                }}
                 className="w-full p-6 flex items-center justify-between text-left font-bold text-slate-900 group focus:outline-none focus:ring-2 focus:ring-cyan-500/20 rounded-2xl"
                 aria-expanded={openIndex === i}
+                aria-controls={`faq-panel-${i}`}
               >
                 <span className={`transition-colors duration-300 pr-4 ${openIndex === i ? 'text-cyan-600' : 'text-slate-900'}`}>
                   {faq.q}
@@ -76,6 +87,7 @@ const faqs = [
               </button>
 
               <div 
+                id={`faq-panel-${i}`}
                 className={`grid transition-all duration-500 ease-in-out ${
                   openIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                 }`}

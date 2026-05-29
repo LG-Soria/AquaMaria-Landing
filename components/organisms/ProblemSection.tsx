@@ -68,18 +68,25 @@ export const ProblemSection = () => {
             <div className="relative aspect-square rounded-[3rem] bg-slate-100 overflow-hidden shadow-2xl">
               <img
                 src="/images/section_problema/problema-bidones-acumulados.jpg"
+                width="1024"
+                height="1024"
                 className={`absolute inset-0 w-full h-full object-cover grayscale transition-[opacity,filter,transform] duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:opacity-20 lg:group-hover:grayscale-0 lg:group-hover:scale-[1.02] ${
                   showMobileSolution ? 'opacity-20 grayscale-0' : 'opacity-80'
                 }`}
                 alt="Bidones de agua acumulados en un espacio de trabajo"
+                loading="lazy"
+                decoding="async"
               />
               <img
                 src="/images/section_problema/2.png"
+                width="1254"
+                height="1254"
                 className={`absolute inset-0 w-full h-full object-cover transition-[opacity,transform] duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:opacity-0 lg:scale-[1.03] lg:group-hover:opacity-100 lg:group-hover:scale-100 ${
                   showMobileSolution ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.03]'
                 }`}
                 alt="Dispenser AquaMaría instalado en una oficina"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="relative mt-4 glass-light p-6 rounded-3xl shadow-xl border border-slate-200 lg:absolute lg:-bottom-6 lg:-right-6 lg:mt-0 lg:max-w-xs lg:p-8">

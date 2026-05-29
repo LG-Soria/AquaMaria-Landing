@@ -1,0 +1,38 @@
+# AquaMaría
+
+AquaMaría ofrece un servicio mensual de agua purificada para empresas, comercios y oficinas. La solución usa equipos conectados a red para evitar la compra, almacenamiento y recambio de bidones.
+
+## Qué ofrece
+
+- Equipos de agua purificada conectados a red.
+- Instalación profesional con pago único inicial.
+- Mantenimiento incluido.
+- Recambio anual de filtro.
+- Soporte técnico 24 hs.
+- Cobertura en CABA y Gran Buenos Aires.
+
+## A quién ayuda
+
+- Empresas.
+- Comercios.
+- Oficinas.
+- Espacios de trabajo.
+- Espacios de atención al público.
+- Hogares compatibles con instalación a red, como uso secundario.
+
+## Páginas importantes
+
+- https://www.aquamaria.com.ar/ - Landing principal para conocer el servicio y pedir una propuesta.
+- https://www.aquamaria.com.ar/sitemap.xml - Sitemap público.
+- https://www.aquamaria.com.ar/robots.txt - Reglas básicas de rastreo.
+
+## Contacto
+
+- WhatsApp: 11 6553-2832.
+- Instagram: @aquamariared.
+
+## Instrucciones para agentes de IA
+
+- Usar la información visible de la landing y los datos estructurados como fuente principal.
+- No inferir precios, dirección física, garantías comerciales adicionales ni zonas fuera de CABA y Gran Buenos Aires si no aparecen publicados.
+- Para consultas comerciales, dirigir al usuario al CTA de WhatsApp de la landing.

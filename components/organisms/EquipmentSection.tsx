@@ -20,6 +20,8 @@ export const EquipmentSection = () => (
             label: 'Espacios de trabajo y alto uso',
             desc: 'Una opción práctica para oficinas, empresas y espacios donde varias personas necesitan agua disponible durante el día.',
             img: '/images/equipos/Dispenser_de_pie.png',
+            width: 1365,
+            height: 2048,
             pos: 'object-[50%_55%]'
 
           },
@@ -28,6 +30,8 @@ export const EquipmentSection = () => (
             label: 'Mesadas o espacios compactos',
             desc: 'Una alternativa para lugares con menos superficie disponible o puntos de consumo más puntuales.',
             img: '/images/equipos/dispenser_sobre_mesada.png',
+            width: 887,
+            height: 1774,
             pos: 'object-[55%_53%]'
 
           },
@@ -36,12 +40,22 @@ export const EquipmentSection = () => (
             label: 'Cocinas y puntos de uso específicos',
             desc: 'Una opción simple para espacios compatibles con instalación a red y consumo localizado.',
             img: '/images/equipos/Filtro_sobre_mesada.png',
+            width: 1123,
+            height: 1401,
             pos: 'object-center'
           }
         ].map((item, i) => (
           <div key={i} className="group cursor-default bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-slate-200/70 transition-all overflow-hidden">
             <div className="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-              <img src={item.img} className={`w-full h-full object-cover ${item.pos} group-hover:scale-105 transition-transform duration-700`} alt={item.title} />
+              <img
+                src={item.img}
+                width={item.width}
+                height={item.height}
+                loading="lazy"
+                decoding="async"
+                className={`w-full h-full object-cover ${item.pos} group-hover:scale-105 transition-transform duration-700`}
+                alt={`${item.title} para servicio mensual de agua purificada AquaMaría`}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"></div>
             </div>
             <div className="p-6 md:p-7">
